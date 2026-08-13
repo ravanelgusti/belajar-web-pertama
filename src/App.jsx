@@ -19,7 +19,7 @@ function App() {
         </div>
         <div>
           <h1 className="text-3xl font-bold text-blue-600">Halo, Ini Web pertamaku!</h1>
-          <Sapaan nama="Navilah ainiS"/>
+          <Sapaan nama="Navilah aini"/>
           <TodoList />
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
