@@ -5,6 +5,7 @@ import About from './About'
 import TodoList from './TodoList'
 import Katalog from './Katalog'
 import Keranjang from './Keranjang'
+import DetailProduk from './DetailProduk'
 
 function App() {
   const [keranjang, setKeranjang] = useState([])
@@ -41,6 +42,10 @@ function App() {
     path="/keranjang"
     element={<Keranjang keranjang={keranjang} setKeranjang={setKeranjang} />}
   />
+  <Route
+  path="/produk/:id"
+  element={<DetailProduk keranjang={keranjang} setKeranjang={setKeranjang} />}
+/>
 </Routes>
     </BrowserRouter>
   )

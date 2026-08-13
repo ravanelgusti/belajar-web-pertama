@@ -1,43 +1,5 @@
-import { useState } from 'react'
-
-const daftarProduk = [
-  {
-    id: 1,
-    nama: 'Sepatu Sneakers Putih',
-    harga: 350000,
-    gambar: 'https://picsum.photos/seed/sepatu1/300/300',
-  },
-  {
-    id: 2,
-    nama: 'Kaos Polos Hitam',
-    harga: 120000,
-    gambar: 'https://picsum.photos/seed/kaos1/300/300',
-  },
-  {
-    id: 3,
-    nama: 'Jaket Denim',
-    harga: 450000,
-    gambar: 'https://picsum.photos/seed/jaket1/300/300',
-  },
-  {
-    id: 4,
-    nama: 'Sepatu Boots Coklat',
-    harga: 520000,
-    gambar: 'https://picsum.photos/seed/sepatu2/300/300',
-  },
-  {
-    id: 5,
-    nama: 'Celana Chino',
-    harga: 210000,
-    gambar: 'https://picsum.photos/seed/celana1/300/300',
-  },
-  {
-    id: 6,
-    nama: 'Topi Baseball',
-    harga: 85000,
-    gambar: 'https://picsum.photos/seed/topi1/300/300',
-  },
-]
+import { Link } from 'react-router-dom'
+import daftarProduk from './dataProduk'
 
 function Katalog({ keranjang, setKeranjang }) {
   function tambahKeKeranjang(produk) {
@@ -55,9 +17,15 @@ function Katalog({ keranjang, setKeranjang }) {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {daftarProduk.map((produk) => (
           <div key={produk.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <img src={produk.gambar} alt={produk.nama} className="w-full h-32 object-cover" />
+            <Link to={`/produk/${produk.id}`}>
+              <img src={produk.gambar} alt={produk.nama} className="w-full h-32 object-cover" />
+            </Link>
             <div className="p-3">
-              <h3 className="text-sm font-semibold text-gray-800">{produk.nama}</h3>
+              <Link to={`/produk/${produk.id}`}>
+                <h3 className="text-sm font-semibold text-gray-800 hover:text-indigo-600">
+                  {produk.nama}
+                </h3>
+              </Link>
               <p className="text-indigo-600 font-bold text-sm mt-1">
                 {formatRupiah(produk.harga)}
               </p>
