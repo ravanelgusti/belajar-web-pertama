@@ -1,0 +1,19 @@
+.kotak-sapaan {
+  background-color: #f0f0f0;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.tombol-suka {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tombol-suka:hover {
+  background-color: #535bf2;
+}
